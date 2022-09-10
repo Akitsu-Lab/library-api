@@ -21,4 +21,13 @@ public class BookRepositoryImpl implements BookRepository {
     public List<Book> findList(BookSelector selector) {
         return this.sqlSession.getMapper(BookMapper.class).find(selector);
     }
+
+    @Override
+    public Book findOne(long bookId) {
+        Book book = this.sqlSession.getMapper(BookMapper.class).get(bookId);
+
+        if(book == null) {//TODO: ResourceNotFoundExceptionを記述
+        }
+        return book;
+    }
 }

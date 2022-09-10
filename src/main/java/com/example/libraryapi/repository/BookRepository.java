@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface BookRepository {
     List<Book> findList(BookSelector selector);
+    Book findOne(long bookId);
 }
