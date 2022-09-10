@@ -8,6 +8,8 @@
     <resultMap id="Book" type="com.example.libraryapi.domain.Book">
         <id property="bookId" column="id"/>
         <result property="bookTitle" column="title"/>
+        <result property="bookPages" column="pages"/>
+        <result property="bookContent" column="content"/>
     </resultMap>
 
 
@@ -37,7 +39,7 @@
     </select>
 
     <insert id="add">-- TODO:parameterTypeとkeyPropertyを追加
-    INSERT INTO BOOK (title, bookPages, bookContent)
+    INSERT INTO BOOK (title, Pages, Content)
     VALUES (#{bookTitle}, #{bookPages}, #{bookContent})
     </insert>
 
