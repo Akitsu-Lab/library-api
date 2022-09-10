@@ -38,7 +38,7 @@ public class BookServiceImpl implements BookService {
     @Transactional(rollbackFor = Throwable.class)
     public void set(Book book) {
         this.repository.lock(book.getBookId());
-        this.repository.updata(book);
+        this.repository.update(book);
     }
 
 }
