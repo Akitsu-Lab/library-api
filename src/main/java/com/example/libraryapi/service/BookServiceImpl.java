@@ -41,4 +41,10 @@ public class BookServiceImpl implements BookService {
         this.repository.update(book);
     }
 
+    @Override
+    @Transactional(rollbackFor = Throwable.class)
+    public void remove(long bookId) {
+        Book target = this.repository.lock(bookId);
+        this.repository.delete(target);
+    }
 }
