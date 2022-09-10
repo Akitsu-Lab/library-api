@@ -2,7 +2,10 @@ package com.example.libraryapi.service;
 
 import com.example.libraryapi.domain.BookList;
 import com.example.libraryapi.domain.BookSelector;
+import com.example.libraryapi.repository.BookRepository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class BookServiceImpl implements BookService {
 
     private final BookRepository repository;
