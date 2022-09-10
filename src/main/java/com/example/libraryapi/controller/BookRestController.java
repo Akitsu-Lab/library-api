@@ -29,4 +29,10 @@ public class BookRestController {
     public void add(@RequestBody Book book) {
         this.service.add(book);
     }
+
+    @PatchMapping(path = "/{bookId}", produces = "application/json")
+    public void set(@PathVariable long bookId, @RequestBody Book book) {
+        book.setBookId(bookId);
+        this.service.set(book);
+    }
 }
