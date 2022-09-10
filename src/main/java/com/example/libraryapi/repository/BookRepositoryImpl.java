@@ -2,6 +2,7 @@ package com.example.libraryapi.repository;
 
 import com.example.libraryapi.domain.Book;
 import com.example.libraryapi.domain.BookSelector;
+import com.example.libraryapi.repository.mybatis.BookMapper;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
