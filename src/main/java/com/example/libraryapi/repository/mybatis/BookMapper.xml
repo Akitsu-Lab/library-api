@@ -22,5 +22,9 @@
         </where>
         ORDER BY ID ASC
     </select>
+    <select id="get" resultMap="Book">
+        SELECT ID, TITLE, PAGES, CONTENT FROM BOOK
+        WHERE ID = #{bookId}
+    </select>
 
 </mapper>
