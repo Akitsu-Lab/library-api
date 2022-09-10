@@ -23,6 +23,7 @@ public class BookRestController {
         return this.service.find(selector);
     }
 
+    @GetMapping(path = "/{bookId}", produces = "application/json")
     public Book get(@PathVariable long bookId) {
         return this.service.get(bookId);
     }
