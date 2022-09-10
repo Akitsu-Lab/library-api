@@ -26,7 +26,7 @@ public class BookRepositoryImpl implements BookRepository {
     public Book findOne(long bookId) {
         Book book = this.sqlSession.getMapper(BookMapper.class).get(bookId);
 
-        if(book == null) {//TODO: ResourceNotFoundExceptionを記述
+        if (book == null) {//TODO: ResourceNotFoundExceptionを記述
         }
         return book;
     }
@@ -34,7 +34,7 @@ public class BookRepositoryImpl implements BookRepository {
     @Override
     public Book lock(long bookId) {
         Book book = this.sqlSession.getMapper(BookMapper.class).lock(bookId);
-        if(book == null){//TODO: ResourceNotFoundExceptionを記述
+        if (book == null) {//TODO: ResourceNotFoundExceptionを記述
         }
         return book;
     }
@@ -47,7 +47,14 @@ public class BookRepositoryImpl implements BookRepository {
     @Override
     public void update(Book book) {
         int affected = this.sqlSession.getMapper(BookMapper.class).set(book);
-        if(affected != 1){//TODO: ResourceNotFoundExceptionを記述
+        if (affected != 1) {//TODO: ResourceNotFoundExceptionを記述
+        }
+    }
+
+    @Override
+    public void delete(Book book) {
+        int affected = this.sqlSession.getMapper(BookMapper.class).remove(book);
+        if (affected != 1) {//TODO: ResourceNotFoundExceptionを記述
         }
     }
 
