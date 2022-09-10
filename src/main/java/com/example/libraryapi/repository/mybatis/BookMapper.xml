@@ -24,19 +24,36 @@
     </select>
 
     <select id="get" resultMap="Book">
-        SELECT ID, TITLE, PAGES, CONTENT FROM BOOK
+        SELECT ID, TITLE, PAGES, CONTENT
+        FROM BOOK
         WHERE ID = #{bookId}
     </select>
 
     <select id="lock" resultMap="Book">
-        SELECT ID, TITLE, PAGES, CONTENT FROM BOOK
+        SELECT ID, TITLE, PAGES, CONTENT
+        FROM BOOK
         WHERE ID = #{bookId}
-        FOR UPDATE
+            FOR UPDATE
     </select>
 
     <insert id="add">-- TODO:parameterTypeとkeyPropertyを追加
-        INSERT INTO BOOK (title, pages, content)
-        VALUES (#{bookTitle}, #{pages}, #{content})
+    INSERT INTO BOOK (title, pages, content)
+    VALUES (#{bookTitle}, #{pages}, #{content})
     </insert>
 
+    <update id="set">-- TODO:parameterTypeを追加
+        UPDATE BOOK
+        <set>
+            <if test="bookTitle != null">
+                TITLE = #{bookTitle},
+            </if>
+            <if test="pages != null">
+                PAGES = #{pages},
+            </if>
+            <if test="content != null">
+                CONTENT = #{content},
+            </if>
+        </set>
+        WHERE ID = #{bookId}
+    </update>
 </mapper>
