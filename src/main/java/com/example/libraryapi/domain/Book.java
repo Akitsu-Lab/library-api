@@ -22,6 +22,7 @@ public class Book {
     public void setBookTitle(String bookTitle) {
         this.bookTitle = bookTitle;
     }
+
     public int getBookPages() {
         return bookPages;
     }
@@ -37,4 +38,5 @@ public class Book {
     public void setBookContent(String bookContent) {
         this.bookContent = bookContent;
     }
+
 }
