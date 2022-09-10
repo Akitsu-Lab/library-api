@@ -9,7 +9,7 @@ CREATE TABLE `book`
 (
     `id`      int(11) NOT NULL AUTO_INCREMENT,
     `title`   varchar(128) DEFAULT Null,
-    `pages`   int(11),
+    `bookPages`   int(11),
     `content` TEXT,
     PRIMARY KEY (`id`)
 );

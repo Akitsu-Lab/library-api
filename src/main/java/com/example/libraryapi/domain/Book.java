@@ -3,7 +3,7 @@ package com.example.libraryapi.domain;
 public class Book {
     private long bookId;
     private String bookTitle;
-    private int pages;
+    private int bookPages;
     private String content;
 
     //getterとsetter
@@ -22,12 +22,12 @@ public class Book {
     public void setBookTitle(String bookTitle) {
         this.bookTitle = bookTitle;
     }
-    public int getPages() {
-        return pages;
+    public int getBookPages() {
+        return bookPages;
     }
 
-    public void setPages(int pages) {
-        this.pages = pages;
+    public void setBookPages(int bookPages) {
+        this.bookPages = bookPages;
     }
 
     public String getContent() {

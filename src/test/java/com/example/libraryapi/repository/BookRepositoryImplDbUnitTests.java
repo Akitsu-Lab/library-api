@@ -35,7 +35,7 @@ public class BookRepositoryImplDbUnitTests {
             Book book = target.lock(1);
             assertEquals(1,book.getBookId());
             assertEquals("Java",book.getBookTitle());
-            assertEquals(332,book.getPages());
+            assertEquals(332,book.getBookPages());
             assertEquals("Javaについて",book.getContent());
         }
 
@@ -43,7 +43,7 @@ public class BookRepositoryImplDbUnitTests {
         public void testInsert() throws Exception {
             Book book = new Book();
             book.setBookTitle("PHP");
-            book.setPages(22);
+            book.setBookPages(22);
             book.setContent("PHPの本");
             target.insert(book);
         }
@@ -53,7 +53,7 @@ public class BookRepositoryImplDbUnitTests {
             Book input = new Book();
             input.setBookId(1);
             input.setBookTitle("新Java");
-            input.setPages(2);
+            input.setBookPages(2);
             input.setContent("新しいJava");
             target.update(input);
         }

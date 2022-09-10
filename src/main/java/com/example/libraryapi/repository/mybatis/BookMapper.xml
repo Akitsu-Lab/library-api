@@ -37,8 +37,8 @@
     </select>
 
     <insert id="add">-- TODO:parameterTypeとkeyPropertyを追加
-    INSERT INTO BOOK (title, pages, content)
-    VALUES (#{bookTitle}, #{pages}, #{content})
+    INSERT INTO BOOK (title, bookPages, content)
+    VALUES (#{bookTitle}, #{bookPages}, #{content})
     </insert>
 
     <update id="set">-- TODO:parameterTypeを追加
@@ -47,8 +47,8 @@
             <if test="bookTitle != null">
                 TITLE = #{bookTitle},
             </if>
-            <if test="pages != null">
-                PAGES = #{pages},
+            <if test="bookPages != null">
+                PAGES = #{bookPages},
             </if>
             <if test="content != null">
                 CONTENT = #{content},
