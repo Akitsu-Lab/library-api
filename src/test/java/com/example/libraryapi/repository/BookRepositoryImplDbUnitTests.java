@@ -57,6 +57,13 @@ public class BookRepositoryImplDbUnitTests {
             input.setContent("新しいJava");
             target.update(input);
         }
+
+        @Test
+        public void testDelete() throws Exception {
+            Book input = new Book();
+            input.setBookId(1);
+            target.delete(input);
+        }
     }
 
     static class FindTestExecutionListener extends AbstractTestExecutionListener {

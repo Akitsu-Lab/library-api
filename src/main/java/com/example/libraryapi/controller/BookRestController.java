@@ -35,4 +35,9 @@ public class BookRestController {
         book.setBookId(bookId);
         this.service.set(book);
     }
+
+    @DeleteMapping(path = "/{bookId}", produces = "application/jons")
+    public void remove(@PathVariable long bookId) {
+        this.service.remove(bookId);
+    }
 }

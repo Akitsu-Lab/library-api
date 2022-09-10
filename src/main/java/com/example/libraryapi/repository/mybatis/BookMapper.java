@@ -14,4 +14,5 @@ public interface BookMapper {
     Book lock(@Param("bookId") long bookId);
     int add(Book book);
     int set(Book book);
+    int remove(Book book);
 }
