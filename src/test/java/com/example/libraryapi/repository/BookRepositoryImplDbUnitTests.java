@@ -36,7 +36,7 @@ public class BookRepositoryImplDbUnitTests {
             assertEquals(1,book.getBookId());
             assertEquals("Java",book.getBookTitle());
             assertEquals(332,book.getBookPages());
-            assertEquals("Javaについて",book.getContent());
+            assertEquals("Javaについて",book.getBookContent());
         }
 
         @Test
@@ -44,7 +44,7 @@ public class BookRepositoryImplDbUnitTests {
             Book book = new Book();
             book.setBookTitle("PHP");
             book.setBookPages(22);
-            book.setContent("PHPの本");
+            book.setBookContent("PHPの本");
             target.insert(book);
         }
 
@@ -54,7 +54,7 @@ public class BookRepositoryImplDbUnitTests {
             input.setBookId(1);
             input.setBookTitle("新Java");
             input.setBookPages(2);
-            input.setContent("新しいJava");
+            input.setBookContent("新しいJava");
             target.update(input);
         }
 

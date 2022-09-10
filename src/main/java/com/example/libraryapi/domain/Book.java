@@ -4,7 +4,7 @@ public class Book {
     private long bookId;
     private String bookTitle;
     private int bookPages;
-    private String content;
+    private String bookContent;
 
     //getterとsetter
     public long getBookId() {
@@ -30,11 +30,11 @@ public class Book {
         this.bookPages = bookPages;
     }
 
-    public String getContent() {
-        return content;
+    public String getBookContent() {
+        return bookContent;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setBookContent(String bookContent) {
+        this.bookContent = bookContent;
     }
 }
