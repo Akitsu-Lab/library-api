@@ -1,14 +1,14 @@
 package com.example.libraryapi.domain;
 
 public class BookSelector {
-    private String bookName;
+    private String bookTitle;
 
     public String getBookName() {
-        return bookName;
+        return bookTitle;
     }
 
-    public void setBookName(String bookName) {
-        this.bookName = bookName;
+    public void setBookName(String bookTitle) {
+        this.bookTitle = bookTitle;
     }
 
 
