@@ -33,4 +33,12 @@ public class BookServiceImpl implements BookService {
     public void add(Book book) {
         this.repository.insert(book);
     }
+
+    @Override
+    @Transactional(rollbackFor = Throwable.class)
+    public void set(Book book) {
+        this.repository.lock(book.getBookId());
+        this.repository.updata(book);
+    }
+
 }
