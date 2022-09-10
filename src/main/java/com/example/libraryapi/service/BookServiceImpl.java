@@ -5,6 +5,7 @@ import com.example.libraryapi.domain.BookList;
 import com.example.libraryapi.domain.BookSelector;
 import com.example.libraryapi.repository.BookRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class BookServiceImpl implements BookService {
@@ -25,5 +26,11 @@ public class BookServiceImpl implements BookService {
     @Override
     public Book get(long bookId) {
         return this.repository.findOne(bookId);
+    }
+
+    @Override
+    @Transactional(rollbackFor = Throwable.class)
+    public void add(Book book) {
+        this.repository.insert(book);
     }
 }

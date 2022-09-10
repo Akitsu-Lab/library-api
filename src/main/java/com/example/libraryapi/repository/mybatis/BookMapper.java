@@ -11,4 +11,6 @@ import java.util.List;
 public interface BookMapper {
     List<Book> find(BookSelector selector);
     Book get(@Param("bookId") long bookId);
+    Book lock(@Param("bookId") long bookId);
+    int add(Book book);
 }
