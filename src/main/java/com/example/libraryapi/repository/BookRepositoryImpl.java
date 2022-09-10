@@ -13,8 +13,8 @@ public class BookRepositoryImpl implements BookRepository {
 
     private final SqlSession sqlSession;
 
-    public BookRepositoryImpl(SqlSession sqlSession, SqlSession sqlSession1) {
-        this.sqlSession = sqlSession1;
+    public BookRepositoryImpl(SqlSession sqlSession) {
+        this.sqlSession = sqlSession;
     }
 
     @Override
