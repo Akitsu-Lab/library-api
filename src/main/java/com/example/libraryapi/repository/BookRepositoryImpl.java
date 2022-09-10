@@ -30,4 +30,18 @@ public class BookRepositoryImpl implements BookRepository {
         }
         return book;
     }
+
+    @Override
+    public Book lock(long bookId) {
+        Book book = this.sqlSession.getMapper(BookMapper.class).lock(bookId);
+        if(book == null){//TODO: ResourceNotFoundExceptionを記述
+        }
+        return book;
+    }
+
+    @Override
+    public void insert(Book book) {
+        this.sqlSession.getMapper(BookMapper.class).add(book);
+    }
+
 }
