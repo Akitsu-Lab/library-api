@@ -14,7 +14,7 @@
     <!-- Book名で検索-->
     <!-- Book名がnullの場合、全件検索-->
     <select id="find" resultMap="Book">
-        SELECT ID, TITLE FROM BOOK
+        SELECT ID, TITLE, PAGES, CONTENT FROM BOOK
         <where>
             <if test="bookTitle != null">
                 TITLE LIKE CONCAT('%',#{bookTitle},'%')
