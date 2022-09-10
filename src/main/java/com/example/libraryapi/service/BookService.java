@@ -7,4 +7,5 @@ import com.example.libraryapi.domain.BookSelector;
 public interface BookService {
     BookList find(BookSelector selector);
     Book get(long bookId);
+    void add(Book book);
 }
