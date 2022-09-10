@@ -22,9 +22,21 @@
         </where>
         ORDER BY ID ASC
     </select>
+
     <select id="get" resultMap="Book">
         SELECT ID, TITLE, PAGES, CONTENT FROM BOOK
         WHERE ID = #{bookId}
     </select>
+
+    <select id="lock" resultMap="Book">
+        SELECT ID, TITLE, PAGES, CONTENT FROM BOOK
+        WHERE ID = #{bookId}
+        FOR UPDATE
+    </select>
+
+    <insert id="add">-- TODO:parameterTypeとkeyPropertyを追加
+        INSERT INTO BOOK (title, pages, content)
+        VALUES (#{bookTitle}, #{pages}, #{content})
+    </insert>
 
 </mapper>
