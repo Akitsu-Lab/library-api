@@ -10,4 +10,5 @@ public interface BookRepository {
     Book findOne(long bookId);
     Book lock(long bookId);
     void insert(Book book);
+    void update(Book book);
 }

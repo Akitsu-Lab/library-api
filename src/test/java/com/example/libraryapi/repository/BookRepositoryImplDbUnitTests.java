@@ -27,7 +27,16 @@ public class BookRepositoryImplDbUnitTests {
         @Test
         public void testFindAll() throws Exception {
             List<Book> books = target.findList(null);
-            assertEquals(3,books.size());
+            assertEquals(3, books.size());
+        }
+
+        @Test
+        public void testLock() throws Exception {
+            Book book = target.lock(1);
+            assertEquals(1,book.getBookId());
+            assertEquals("Java",book.getBookTitle());
+            assertEquals(332,book.getPages());
+            assertEquals("Javaについて",book.getContent());
         }
 
         @Test
@@ -37,6 +46,16 @@ public class BookRepositoryImplDbUnitTests {
             book.setPages(22);
             book.setContent("PHPの本");
             target.insert(book);
+        }
+
+        @Test
+        public void testUpdate() throws Exception {
+            Book input = new Book();
+            input.setBookId(1);
+            input.setBookTitle("新Java");
+            input.setPages(2);
+            input.setContent("新しいJava");
+            target.update(input);
         }
     }
 

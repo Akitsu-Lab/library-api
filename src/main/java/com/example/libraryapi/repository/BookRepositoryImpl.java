@@ -13,8 +13,8 @@ public class BookRepositoryImpl implements BookRepository {
 
     private final SqlSession sqlSession;
 
-    public BookRepositoryImpl(SqlSession sqlSession, SqlSession sqlSession1) {
-        this.sqlSession = sqlSession1;
+    public BookRepositoryImpl(SqlSession sqlSession) {
+        this.sqlSession = sqlSession;
     }
 
     @Override
@@ -42,6 +42,13 @@ public class BookRepositoryImpl implements BookRepository {
     @Override
     public void insert(Book book) {
         this.sqlSession.getMapper(BookMapper.class).add(book);
+    }
+
+    @Override
+    public void update(Book book) {
+        int affected = this.sqlSession.getMapper(BookMapper.class).set(book);
+        if(affected != 1){//TODO: ResourceNotFoundExceptionを記述
+        }
     }
 
 }
