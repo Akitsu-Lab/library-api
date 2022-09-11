@@ -48,6 +48,7 @@ public class BookRepositoryImpl implements BookRepository {
     @Override
     public void insert(Book book) {
         this.sqlSession.getMapper(BookMapper.class).add(book);
+        logger.info("{}を追加できました",book.getBookTitle());
     }
 
     @Override
