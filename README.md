@@ -5,8 +5,16 @@ API of LibraryApplication
 # 注意
 
 - アプリを実行する前にやること
-    - application.ymlの作成
+    - application.ymlの修正
+      - username
+      - password
     - bookDBinit.sqlを実行
+  ```shell
+  mysql -u root -p
+  ```
+  ```
+  source src/main/resources/bookDBinit.sql;
+  ```
 
 ## ポートが開いてない時
 
@@ -22,8 +30,12 @@ sudo kill 番号
 ```shell
 権限変更
 chmod 744 mvnw
+```
+```shell
 jarファイル作成
 ./mvnw clean package
+```
+```shell
 テスト通さずjarファイル作成
 ./mvnw clean package -DskipTests=true
 ```
