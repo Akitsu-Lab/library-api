@@ -6,8 +6,8 @@ API of LibraryApplication
 
 - アプリを実行する前にやること
     - application.ymlの修正
-      - username
-      - password
+      - username: 
+      - password: 
     - bookDBinit.sqlを実行
   ```shell
   mysql -u root -p
@@ -60,3 +60,22 @@ javaコマンド
 | server         | 「y」を指定するとデバッガ空の接続を待ち受けます                                                     |
 | suspend        | デバッガが接続できるまでアプリケーションの実行を停止する場合、<br/>「y」を指定します。アプリケーションの起動時の処理をデバッグする場合に利用します |
 | address        | デバッガからの接続を待ち受けるポート番号を指定します                                                   |
+
+## デプロイ
+### ファイルの準備
+  - library-api-0.0.1-SNAPSHOT.jar
+  - jar_controller.sh
+### 準備したファイルをサーバに送る
+- 上記ファイルは同一のディレクトリ(ホームディレクトリなど)に配置
+### サーバ上でjar_controller.shの権限を書き換える
+```shell
+chmod 755 jar_controller.sh
+```
+### アプリの起動
+```shell
+./jar_controller.sh on api
+```
+### アプリの停止
+```shell
+./jar_controller.sh off api
+```
