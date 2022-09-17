@@ -79,3 +79,8 @@ chmod 755 jar_controller.sh
 ```shell
 ./jar_controller.sh off api
 ```
+
+### 動作確認
+```shell
+http://localhost:8080/services/v1/books
+```
