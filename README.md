@@ -81,6 +81,9 @@ chmod 755 jar_controller.sh
 ```
 
 ### 動作確認
-```shell
+```http request
 http://localhost:8080/services/v1/books
+```
+```http request
+http://os3-285-32121.vs.sakura.ne.jp:8080/services/v1/books
 ```
