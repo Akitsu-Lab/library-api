@@ -5,10 +5,15 @@ API of LibraryApplication
 # 注意
 
 - アプリを実行する前にやること
-    - application.ymlの修正
+    - application.ymlをgit管理対象から除外
       - 以下のコマンドを打ち、application.ymlがgitで更新されないようにする
-      
+
       `git update-index --assume-unchanged src/main/resources/application.yml`
+
+      - 更新したい場合は以下のコマンド
+
+      `git update-index --no-assume-unchanged src/main/resources/application.yml` 
+    - application.ymlの修正
       - username: 
       - password: 
     - bookDBinit.sqlを実行
